@@ -8,6 +8,14 @@ package other;
 public class NanoTime {
     private long start, end;
 
+    public static void main(String args[]) {
+        NanoTime testFor = new NanoTime();
+        System.out.println("执行代码后时间差单位为毫微秒:" + testFor.getUsedTime());// 单位为毫微秒
+        System.out
+                .println("执行代码后时间差单位为秒:" + testFor.getUsedTime() / 1000000000);// 单位秒
+
+    }
+
     public void testFor() {
         start = System.nanoTime();
         for (int i = 1, sum = 0; i <= 1000000000; i++)
@@ -18,14 +26,6 @@ public class NanoTime {
     public long getUsedTime() {
         testFor();
         return end - start;
-    }
-
-    public static void main(String args[]) {
-        NanoTime testFor = new NanoTime();
-        System.out.println("执行代码后时间差单位为毫微秒:" + testFor.getUsedTime());// 单位为毫微秒
-        System.out
-                .println("执行代码后时间差单位为秒:" + testFor.getUsedTime() / 1000000000);// 单位秒
-
     }
 }
 /**

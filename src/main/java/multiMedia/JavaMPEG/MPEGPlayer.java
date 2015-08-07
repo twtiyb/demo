@@ -1481,7 +1481,7 @@ class Picture {
                 address = lastAddress;
             } else {
                 while (++address < lastAddress) {
-	  /* assume inter coded macro block with zero coefficients */
+      /* assume inter coded macro block with zero coefficients */
                     macroblock.resetDataPredictors();
 
 	  /* use previous motion vectors or zero in P-picture macro blocks */
