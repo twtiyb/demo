@@ -1,8 +1,8 @@
 package gof23.Proxy;
 
-import net.sf.cglib.proxy.Enhancer;
-import net.sf.cglib.proxy.MethodInterceptor;
-import net.sf.cglib.proxy.MethodProxy;
+import org.springframework.cglib.proxy.Enhancer;
+import org.springframework.cglib.proxy.MethodInterceptor;
+import org.springframework.cglib.proxy.MethodProxy;
 
 import java.lang.reflect.Method;
 
@@ -25,6 +25,7 @@ public class CgLibProxy implements MethodInterceptor {
         return enhancer.create();
     }
 
+    @Override
     // 回调方法
     public Object intercept(Object obj, Method method, Object[] args,
                             MethodProxy proxy) throws Throwable {
@@ -33,4 +34,6 @@ public class CgLibProxy implements MethodInterceptor {
         System.out.println("事物结束");
         return null;
     }
+
+
 }

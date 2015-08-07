@@ -1,4 +1,4 @@
-package Gof23.Singlton;
+package gof23.Singlton;
 
 
 public final class LazySinglton {

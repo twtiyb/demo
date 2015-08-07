@@ -1,4 +1,4 @@
-﻿package html;
+package html;
 
 
 import java.awt.image.BufferedImage;

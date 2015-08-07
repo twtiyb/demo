@@ -1,4 +1,4 @@
-package Gof23.Proxy;
+package gof23.Proxy;
 
 
 public class Proxy implements IProxy {

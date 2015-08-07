@@ -2,6 +2,8 @@ package IO;
 
 import java.io.*;
 import java.net.URLDecoder;
+import java.nio.MappedByteBuffer;
+import java.nio.channels.FileChannel;
 
 public class Read {
     static String context = "";// 创建一个字符串用来记录目录及文件;
@@ -59,7 +61,7 @@ public class Read {
     }
 
 
-    public void readBigFile() {
+    public void readBigFile() throws FileNotFoundException {
         final int BUFFER_SIZE = 0x1200000;// 缓冲大小为12M
 
         System.out.println(BUFFER_SIZE);
@@ -69,9 +71,14 @@ public class Read {
         int len = 0;
         Long start = System.currentTimeMillis();
         for (int z = 8; z > 0; z--) {
-            MappedByteBuffer inputBuffer = new RandomAccessFile(f, "r")
-                    .getChannel().map(FileChannel.MapMode.READ_ONLY,
-                            f.length() * (z - 1) / 8, f.length() * 1 / 8);
+            MappedByteBuffer inputBuffer = null;
+            try {
+                inputBuffer = new RandomAccessFile(f, "r")
+                        .getChannel().map(FileChannel.MapMode.READ_ONLY,
+                                f.length() * (z - 1) / 8, f.length() * 1 / 8);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             byte[] dst = new byte[BUFFER_SIZE];// 每次读出12M的内容
             for (int offset = 0; offset < inputBuffer.capacity(); offset += BUFFER_SIZE) {
                 if (inputBuffer.capacity() - offset >= BUFFER_SIZE) {

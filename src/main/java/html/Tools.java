@@ -1,4 +1,4 @@
-﻿package html;
+package html;
 
 
 import javax.imageio.ImageIO;

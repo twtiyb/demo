@@ -1,4 +1,4 @@
-package Gof23.Proxy;
+package gof23.Proxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

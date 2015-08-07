@@ -8,35 +8,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class StringUtil {
-    /**
-     * 判断短信字数。（现在的服务商基本不按这个来。而是直接string.lenth()/67。不管它是字符还是汉字都按1来算。）
-     *
-     * @param str
-     * @return
-     */
-    public float countSmsWords(String str) {
-        if (str == null || str.length() <= 0) {
-            return 0;
-        }
-        float len = 0;
-        char c;
-        for (int i = str.length() - 1; i >= 0; i--) {
-            c = str.charAt(i);
-            if ((c >= '0' && c <= '9') || (c >= 'a' && c <= 'z')
-                    || (c >= 'A' && c <= 'Z')) {
-                // 字母, 数字
-                len += 0.5;
-            } else {
-                if (Character.isLetter(c)) { // 中文
-                    len++;
-                } else { // 符号或控制字符
-                    len += 0.5;
-                }
-            }
-        }
-        return len;
-    }
-
     public static boolean isEmpty(String str) {
         return (str == null) || (str.length() == 0) || (str == "");
     }
@@ -271,10 +242,38 @@ public class StringUtil {
         return tokenizeToStringArray(str, delimiters, true, true);
     }
 
-
     public static void main(String[] arg) {
         String[] basePackages = StringUtils.tokenizeToStringArray("ss.bb", ConfigurableApplicationContext.CONFIG_LOCATION_DELIMITERS);
         String ss = "aaa.bb".replace(".", "/");
         System.out.print(basePackages);
+    }
+
+    /**
+     * 判断短信字数。（现在的服务商基本不按这个来。而是直接string.lenth()/67。不管它是字符还是汉字都按1来算。）
+     *
+     * @param str
+     * @return
+     */
+    public float countSmsWords(String str) {
+        if (str == null || str.length() <= 0) {
+            return 0;
+        }
+        float len = 0;
+        char c;
+        for (int i = str.length() - 1; i >= 0; i--) {
+            c = str.charAt(i);
+            if ((c >= '0' && c <= '9') || (c >= 'a' && c <= 'z')
+                    || (c >= 'A' && c <= 'Z')) {
+                // 字母, 数字
+                len += 0.5;
+            } else {
+                if (Character.isLetter(c)) { // 中文
+                    len++;
+                } else { // 符号或控制字符
+                    len += 0.5;
+                }
+            }
+        }
+        return len;
     }
 }
