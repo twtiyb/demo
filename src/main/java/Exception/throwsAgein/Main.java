@@ -1,5 +1,8 @@
 package Exception.throwsAgein;
 
+/**
+ *
+ */
 public class Main {
     public static void main(String arg[]) {
         Main test = new Main();
