@@ -30,7 +30,7 @@ public class CgLibProxy implements MethodInterceptor {
     public Object intercept(Object obj, Method method, Object[] args,
                             MethodProxy proxy) throws Throwable {
         System.out.println("事物开始");
-        proxy.invokeSuper(obj, args);
+        proxy.invokeSuper(obj, args);//虽然第一个参数是被代理对象，也不会出现死循环的问题。jdk的是循环。
         System.out.println("事物结束");
         return null;
     }
