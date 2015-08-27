@@ -1,13 +1,13 @@
 package jms.mq.topic.publisher01;
 
-import javax.jms.*;
-
 import org.apache.activemq.ActiveMQConnectionFactory;
+
+import javax.jms.*;
 
 public class Consumer {  
 	  
-    private static String brokerURL = "tcp://localhost:61616";  
-    private static transient ConnectionFactory factory;  
+    private static String brokerURL = "tcp://localhost:61611";
+    private static transient ConnectionFactory factory;
     private transient Connection connection;  
     private transient Session session;  
       
@@ -23,16 +23,16 @@ public class Consumer {
             connection.close();  
         }  
     }      
-      
+
     public static void main(String[] args) throws JMSException {
-        Consumer consumer = new Consumer();  
-        for (String stock : args) {  
-            Destination destination = consumer.getSession().createTopic("STOCKS." + stock);  
-            MessageConsumer messageConsumer = consumer.getSession().createConsumer(destination);  
-            messageConsumer.setMessageListener(new Listener());  
+        Consumer consumer = new Consumer();
+        for (String stock : args) {
+            Destination destination = consumer.getSession().createTopic("STOCKS." + stock);
+            MessageConsumer messageConsumer = consumer.getSession().createConsumer(destination);
+            messageConsumer.setMessageListener(new Listener());
         }
     }
-      
+
     public Session getSession() {  
         return session;  
     }  
