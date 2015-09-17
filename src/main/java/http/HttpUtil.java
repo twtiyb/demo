@@ -1,5 +1,6 @@
 package http;
 
+import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -33,14 +34,26 @@ public class HttpUtil {
     }
 
     public static void main(String[] args) {
+//        try {
+//            InputStream inputStream = HttpUtil.getUrlData("http://www.52haigo.com/data/upload/waybill/359356017755-100x150.jpg");
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//
+//        }
+//        try {
+//            InputStream inputStream = HttpUtil.getUrlData("http://img01.taobaocdn.com/tfscom/TB1fE46JXXXXXXXXpXXSutbFXXX");
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
         try {
-            InputStream inputStream = HttpUtil.getUrlData("http://www.52haigo.com/data/upload/waybill/359356017755-100x150.jpg");
-        } catch (Exception e) {
-            e.printStackTrace();
-
-        }
-        try {
-            InputStream inputStream = HttpUtil.getUrlData("http://img01.taobaocdn.com/tfscom/TB1fE46JXXXXXXXXpXXSutbFXXX");
+            InputStream inputStream = HttpUtil.getUrlData("http://www.52haigo.com/gateway/index.php?act=waybill_print&op=getfile&keyword=359544604874");
+            ByteArrayOutputStream fileContent = new ByteArrayOutputStream();
+            int n = 0 ;
+            byte[] buffer = new byte[3000];
+            while (-1 != (n = inputStream.read(buffer))) {
+                fileContent.write(buffer,0,n);
+            }
+            System.out.print(fileContent.size());
         } catch (Exception e) {
             e.printStackTrace();
         }
