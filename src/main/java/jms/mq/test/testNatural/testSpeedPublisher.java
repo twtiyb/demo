@@ -11,7 +11,7 @@ import java.util.concurrent.Executors;
 /**
  * Created by xuchun on 15/8/25.
  */
-public class testSpeed {
+public class testSpeedPublisher {
 
     static int size = 200000;
     static Session session;
@@ -30,8 +30,8 @@ public class testSpeed {
 
         topic = session.createTopic("xuchun.testTopicSpeed");
         producerTopic = session.createProducer(topic);
-        producerTopic.setDeliveryMode(DeliveryMode.NON_PERSISTENT);
-//        producerTopic.setDeliveryMode(DeliveryMode.PERSISTENT);
+//        producerTopic.setDeliveryMode(DeliveryMode.NON_PERSISTENT);
+        producerTopic.setDeliveryMode(DeliveryMode.PERSISTENT);
 
         queue = session.createQueue("xuchun.testQueueSpeed");
         producerQueue = session.createProducer(queue);
@@ -102,7 +102,6 @@ public class testSpeed {
         final CountDownLatch cdl = new CountDownLatch(size);
         for (int a = 0; a < size; a++) {
             es.execute(new Runnable() {
-                @Override
                 public void run() {
                     sendTopicMessage(str);
                     cdl.countDown();

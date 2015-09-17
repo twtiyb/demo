@@ -21,7 +21,7 @@ public class MasterSavlePublisher {
             publisher.sendTopicMessage("xuchunTestLasting", message);
             System.out.println(new Date() + " xuchun"+i);
             i++;
-            Thread.currentThread().sleep(1000);
+//            Thread.currentThread().sleep(1000);
         }
     }
 }

@@ -76,7 +76,7 @@ public class GetWorkDayTimeMillisecond {
             echarge -= edate.get(Calendar.MILLISECOND);
         }
         //计算最终结果，具体为：workdays加上开始时间的时间偏移量，减去结束时间的时间偏移量   
-        return workdays * 24 * 3600000 + scharge - echarge;
+        return wo`rkdays * 24 * 3600000 + scharge - echarge;
     }
 
     //根据参数类型的不同  重载了三种方法

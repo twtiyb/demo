@@ -13,7 +13,6 @@ public class MasterSavleConsumer {
     public static void main(String[] args) throws JMSException {
         Consumer consumer = BrokeUtil.getConsummer("xuchunCusumer");
         consumer.setTopicListener("xuchunTestLasting", new MessageListener() {
-            @Override
             public void onMessage(javax.jms.Message message) {
                 try {
                     System.out.println(message.getStringProperty("xuchun"));
