@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/collection/collection.iml" filepath="$PROJECT_DIR$/collection/collection.iml" />
       <module fileurl="file://$PROJECT_DIR$/com.demo.iml" filepath="$PROJECT_DIR$/com.demo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/com.demo.iml" filepath="$PROJECT_DIR$/com.demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gof23/gof23.iml" filepath="$PROJECT_DIR$/gof23/gof23.iml" />
+      <module fileurl="file://$PROJECT_DIR$/io/io.iml" filepath="$PROJECT_DIR$/io/io.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jvm/jvm.iml" filepath="$PROJECT_DIR$/jvm/jvm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/swt/swt.iml" filepath="$PROJECT_DIR$/swt/swt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thread/thread.iml" filepath="$PROJECT_DIR$/thread/thread.iml" />
+      <module fileurl="file://$PROJECT_DIR$/util/util.iml" filepath="$PROJECT_DIR$/util/util.iml" />
     </modules>
   </component>
 </project>

@@ -22,8 +22,25 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="collection" />
         <module name="com.demo" />
+        <module name="gof23" />
+        <module name="io" />
+        <module name="jvm" />
+        <module name="swt" />
+        <module name="thread" />
+        <module name="util" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="1.7">
+      <module name="collection" target="1.7" />
+      <module name="com.demo" target="1.7" />
+      <module name="gof23" target="1.7" />
+      <module name="io" target="1.7" />
+      <module name="jvm" target="1.7" />
+      <module name="swt" target="1.7" />
+      <module name="thread" target="1.7" />
+      <module name="util" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>

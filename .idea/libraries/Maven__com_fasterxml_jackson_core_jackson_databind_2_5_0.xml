@@ -13,6 +13,7 @@
       <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/Jackson-databind/2.5.0/jackson-databind-2.5.0-sources.jar!/" />
       <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/Jackson-databind/2.5.0/jackson-databind-2.5.0-sources.jar!/" />
       <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/Jackson-databind/2.5.0/jackson-databind-2.5.0-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/Jackson-databind/2.5.0/jackson-databind-2.5.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
