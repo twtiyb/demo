@@ -5,14 +5,23 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>xuchun</groupId>
-    <artifactId>com.demo</artifactId>
+    <artifactId>demo</artifactId>
     <version>1.0-SNAPSHOT</version>
 
 
     <modules>
-
+        <module>gof23</module>
+        <module>io</module>
+        <module>jvm</module>
+        <module>swt</module>
+        <module>thread</module>
+        <module>util</module>
     </modules>
     <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+
+
         <!-- <jackson.version>2.5.0</jackson.version>-->
         <jackson.version>2.5.0</jackson.version>
     </properties>
@@ -23,21 +32,7 @@
             <artifactId>commons-httpclient</artifactId>
             <version>3.0</version>
         </dependency>
-        <dependency>
-            <groupId>aopalliance</groupId>
-            <artifactId>aopalliance</artifactId>
-            <version>1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
-            <version>3.2.13.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-            <version>3.2.13.RELEASE</version>
-        </dependency>
+
         <dependency>
             <groupId>net.sourceforge.htmlunit</groupId>
             <artifactId>htmlunit</artifactId>
@@ -48,7 +43,6 @@
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
         </dependency>
-
 
         <dependency>
             <groupId>com.google.guava</groupId>
@@ -61,7 +55,6 @@
             <artifactId>activemq-core</artifactId>
             <version>5.7.0</version>
         </dependency>
-
 
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -89,5 +82,16 @@
 
     </dependencies>
 
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
