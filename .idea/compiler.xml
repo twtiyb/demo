@@ -39,7 +39,7 @@
       <module name="io" target="1.7" />
       <module name="jvm" target="1.7" />
       <module name="swt" target="1.7" />
-      <module name="thread" target="1.7" />
+      <module name="thread" target="1.5" />
       <module name="util" target="1.7" />
     </bytecodeTargetLevel>
   </component>
